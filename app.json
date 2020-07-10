@@ -1,9 +1,9 @@
 {
-  "name": "covid19",
-  "displayName": "covid19",
+  "name": "covid",
+  "displayName": "covid",
   "expo": {
-    "name": "covid19",
-    "slug": "covid19",
+    "name": "covid",
+    "slug": "covid",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
