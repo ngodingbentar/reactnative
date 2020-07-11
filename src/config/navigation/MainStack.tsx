@@ -1,4 +1,5 @@
 import React from 'react'
+import { View,Text, Button,Image, ScrollView } from 'react-native'
 import {createStackNavigator} from '@react-navigation/stack'
 import MainScreen from '../../containers/screens/Main'
 import CountryScreen from '../../containers/screens/Country'
@@ -11,13 +12,41 @@ const MainStack = () => {
         <Stack.Navigator
             screenOptions={{
                 headerStyle:{
-                    background: color.black,
+                    backgroundColor: color.black,
                 },
                 headerTintColor: 'white',
+            }}>
+            <Stack.Screen 
+            name='Covid-19' 
+            component={MainScreen} 
+            options={{
+                headerLeftContainerStyle: {
+                    marginLeft:10,
+                },
+                headerLeft: () => (
+                    <Image
+                        style={{width:50, height:50}}
+                        source={{
+                        uri:'https://www.pngfind.com/pngs/m/685-6854970_react-logo-png-png-download-logo-png-reactjs.png',
+                        }}
+                    />
+                ),
+
+                headerRightContainerStyle: {
+                  marginRight:10,
+                },
+                headerRight: () => (
+                  <Button onPress={() => console.log('wadudu')} title="info" >wa</Button>
+                ),
             }}
-        >
-            <Stack.Screen name='Home' component={MainScreen} />
-            <Stack.Screen name='IndonesianCase' component={CountryScreen} />
+            />
+            <Stack.Screen 
+                name='IndonesianCase' 
+                component={CountryScreen} 
+                options={{
+                    title: 'Indonesia',
+                }}
+                />
         </Stack.Navigator>
     )
 }
