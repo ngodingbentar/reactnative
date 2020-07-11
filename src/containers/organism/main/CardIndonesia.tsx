@@ -23,9 +23,6 @@ interface CardIndonesiaState {
   meninggal:number;
   perawatan:number;
 
-  
-
-
 }
 
 const CardIndonesia = () => {

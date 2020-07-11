@@ -2,10 +2,11 @@ import React from 'react'
 import { View,Text, Button,Image, ScrollView } from 'react-native'
 import {createStackNavigator} from '@react-navigation/stack'
 import MainScreen from '../../containers/screens/Main'
-import CountryScreen from '../../containers/screens/Country'
+// import CountryScreen from '../../containers/screens/Country'
 import color from '../constant/color'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import IndonesianCase from '../../containers/screens/IndonesianCase'
 
 const Stack = createStackNavigator()
 
@@ -47,7 +48,7 @@ const MainStack = () => {
             />
             <Stack.Screen 
                 name='IndonesianCase' 
-                component={CountryScreen} 
+                component={IndonesianCase} 
                 options={{
                     title: 'Indonesia',
                 }}
