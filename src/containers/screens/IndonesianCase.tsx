@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { FlatList } from 'react-native-gesture-handler'
 import axios from 'axios'
 import api from '../../config/constant/api'
+import color from '../../config/constant/color'
 
 interface IndonesianCaseState {
   jumlahKasus:number;
@@ -25,10 +26,19 @@ const IndonesianCase= () => {
   const [data, setData] = useState<IndonesianCaseState[]>([])
   const renderItem = ({item}) => {
     return(
-      <View>
-        <Text>{item.provinsi}</Text>
-        <Text>Positiv</Text>
-
+      <View style={{
+        backgroundColor: 'white',
+        marginVertical:8,
+        marginHorizontal: 12,
+        padding:16,
+        borderRadius: 10,
+        }}>
+        <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom:8}}>{item.provinsi}</Text>
+        <View style={{}}>
+          <Text style={{flex: 1, fontSize: 16,fontWeight: 'bold',backgroundColor: color.oren, color: 'white',padding: 4,paddingLeft:8, borderTopLeftRadius:8, borderTopRightRadius:8}}>Positiv : {item.kasusPosi}</Text>
+          <Text style={{flex: 1, fontSize: 16,fontWeight: 'bold',backgroundColor: color.teal, color: 'white',padding: 4,paddingLeft:8}}>Sembuh : {item.kasusSemb}</Text>
+          <Text style={{flex: 1, fontSize: 16,fontWeight: 'bold',backgroundColor: color.red, color: 'white',padding: 4,paddingLeft:8,borderBottomLeftRadius:8,borderBottomRightRadius:8}}>Meninggal : {item.kasusMeni}</Text>
+        </View>
       </View>
     ) ;
   }
@@ -50,8 +60,8 @@ const IndonesianCase= () => {
   },[])
 
   return(
-    <SafeAreaView>
-      <Text>Halo dewa</Text>
+    <SafeAreaView style={{flex: 1}}>
+      {/* <Text>Halo dewa</Text> */}
 
       {/* {console.warn(data)} */}
       <FlatList 
