@@ -45,32 +45,31 @@ const CardIndonesia = () => {
   //[] agar tidak dipanggil berulang
 
   return (
-    <View style={{marginVertical: 10}}>
+    <View style={{margin: 10}}>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Text style={{
-          color:'white',
+          color: color.grey1,
           // textAlign: 'center',
           marginLeft:10,
           fontWeight: 'bold',
           fontSize: 22,
           }}>Indonesia</Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('IndonesianCase')} >
+        {/* <TouchableOpacity onPress={() => navigation.navigate('IndonesianCase')} >
           <Text style={{
             color:'white',
-            // textAlign: 'center',
             marginRight:10,
             fontWeight: 'bold',
             fontSize: 22,
             }}>Detail</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       <View
       style={{
-        backgroundColor: color.blackLight, 
+        backgroundColor: color.white3, 
         margin: 10, 
         paddingVertical: 10, 
-        paddingHorizontal:20,
+        paddingHorizontal:16,
         borderRadius: 10}}>
       
 
@@ -82,24 +81,38 @@ const CardIndonesia = () => {
       }}>Last Update {data.lastUpdate}</Text> */}
 
       <View
-        style={{
-          flexDirection: 'row',
-        }}>
+        // style={{
+        //   flexDirection: 'row',
+        // }}
+        >
         {data && (
           <>
           <View style={{flex:1}}>
-            <CardInfoGrid color="teal" status="Jumlah Kasus" value={data.jumlahKasus.toLocaleString()}/>
-            <CardInfoGrid color="green" status="Sembuh" value={data.sembuh.toLocaleString()}/>
+            <CardInfoGrid color={color.oren2} status="Jumlah Kasus" value={data.jumlahKasus.toLocaleString()}/>
+            <CardInfoGrid color={color.green} status="Sembuh" value={data.sembuh.toLocaleString()}/>
           </View>
           <View style={{flex:1}}>
-            <CardInfoGrid color="grey" status="Meninggal" value={data.meninggal.toLocaleString()}/>
+            <CardInfoGrid color={color.red} status="Meninggal" value={data.meninggal.toLocaleString()}/>
             <CardInfoGrid color={color.oren} status="Perawatan" value={data.perawatan.toLocaleString()}/>
           </View>
           </>
         )}
         
       </View>
-      <Button title="Detail" onPress={() => console.log('detail')}/>
+      {/* <Button title="Detail" onPress={() => console.log('detail')}/> */}
+      <TouchableOpacity onPress={() => navigation.navigate('IndonesianCase')} >
+          <Text style={{
+            color: color.white2,
+            textAlign: 'center',
+            backgroundColor: color.purple,
+            padding:4,
+            marginVertical:10,
+            marginHorizontal:28,
+            borderRadius:8,
+            fontWeight: 'bold',
+            fontSize: 22,
+            }}>Detail</Text>
+        </TouchableOpacity>
     </View>
   </View>
   )

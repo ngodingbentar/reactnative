@@ -35,7 +35,7 @@ const IndonesianCase= () => {
         }}>
         <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom:8}}>{item.provinsi}</Text>
         <View style={{}}>
-          <Text style={{flex: 1, fontSize: 16,fontWeight: 'bold',backgroundColor: color.oren, color: 'white',padding: 4,paddingLeft:8, borderTopLeftRadius:8, borderTopRightRadius:8}}>Positiv : {item.kasusPosi}</Text>
+          <Text style={{flex: 1, fontSize: 16,fontWeight: 'bold',backgroundColor: color.oren, color: 'white',padding: 4,paddingLeft:8, borderTopLeftRadius:8, borderTopRightRadius:8}}>Positif : {item.kasusPosi}</Text>
           <Text style={{flex: 1, fontSize: 16,fontWeight: 'bold',backgroundColor: color.teal, color: 'white',padding: 4,paddingLeft:8}}>Sembuh : {item.kasusSemb}</Text>
           <Text style={{flex: 1, fontSize: 16,fontWeight: 'bold',backgroundColor: color.red, color: 'white',padding: 4,paddingLeft:8,borderBottomLeftRadius:8,borderBottomRightRadius:8}}>Meninggal : {item.kasusMeni}</Text>
         </View>

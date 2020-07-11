@@ -19,9 +19,9 @@ const CardInfoGrid: FC<Props> = (props) => {
       margin:5,
       }}>
 
-      <Text style={{color: color.black, fontSize: 14,}}>{props.status}</Text>
-      <View style={{height:1, backgroundColor: color.black}} />
-        <Text style={{color: color.blackLight, fontSize: 22, fontWeight: 'bold'}}>{props.value}</Text>
+      <Text style={{color: color.white2, fontSize: 20, fontWeight: 'bold', marginLeft:10}}>{props.status}</Text>
+      <View style={{height:2, backgroundColor: color.black}} />
+        <Text style={{color: color.white2, fontSize: 22, fontWeight: 'bold', marginLeft:10}}>{props.value}</Text>
     </View>
   )
 }

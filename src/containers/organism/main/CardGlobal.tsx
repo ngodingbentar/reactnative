@@ -37,10 +37,10 @@ const CardGlobal = () => {
   },[]); 
   //[] agar tidak dipanggil berulang
   return (
-    <View style={{marginVertical: 10}}>
+    <View style={{margin:10}}>
       <View>
       <Text style={{
-          color:'white',
+          color: color.grey1,
           // textAlign: 'center',
           marginLeft:10,
           fontWeight: 'bold',
@@ -48,7 +48,7 @@ const CardGlobal = () => {
           }}>Global</Text>
       </View>
       <View
-        style={{backgroundColor: color.blackLight, 
+        style={{backgroundColor: color.white3, 
         margin: 10, 
         padding: 20, 
         borderRadius: 10
@@ -56,10 +56,13 @@ const CardGlobal = () => {
         
         {data && (
           <>
-          <CardInfo color="blue" status="Confirmed" value={data.confirmed.value.toLocaleString()}/>
+          <CardInfo color={color.purple} status="Jumlah kasus" value={data.confirmed.value.toLocaleString()}/>
           {/* {console.log('wadudu', data)} */}
-          <CardInfo color="green" status="Recovered" value={data.recovered.value.toLocaleString()}/>
-          <CardInfo color="red" status="Died" value={data.deaths.value}/>
+          <CardInfo color="green" status="Sembuh" value={data.recovered.value.toLocaleString()}/>
+          {/* <CardInfo>
+            <Text style={{color: 'red'}}>wadudu</Text>
+          </CardInfo> */}
+          <CardInfo color="red" status="Meninggal" value={data.deaths.value.toLocaleString()}/>
           </>
         )}
       </View>
