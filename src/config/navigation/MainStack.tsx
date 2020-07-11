@@ -4,6 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack'
 import MainScreen from '../../containers/screens/Main'
 import CountryScreen from '../../containers/screens/Country'
 import color from '../constant/color'
+import Icon from 'react-native-vector-icons/Ionicons';
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const Stack = createStackNavigator()
 
@@ -36,7 +38,10 @@ const MainStack = () => {
                   marginRight:10,
                 },
                 headerRight: () => (
-                  <Button onPress={() => console.log('wadudu')} title="info" >wa</Button>
+                //   <Button onPress={() => console.log('wadudu')} title="info" >wa</Button>
+                <TouchableOpacity>
+                    <Icon name="ios-airplane" size={30} color="white" />
+                </TouchableOpacity>
                 ),
             }}
             />
