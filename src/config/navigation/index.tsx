@@ -18,20 +18,32 @@ const RootNavigation = () => {
         tabBarOptions={{
           style:{
             backgroundColor: color.oren,
-            activeTintColor: color.teal,
             // activeBackgroundColor: color.blackLight,
           },
+          activeTintColor: color.teal,
         }}
       >
         <Tab.Screen 
           name="Main" 
           component={MainStack} 
           options={{
-            tabBarIcon:()=> <Icon name="md-apps" size={30} />
+            tabBarIcon:(props) => <Icon name="md-apps" size={30} color={props.color} />
           }}
           />
-        <Tab.Screen name="Map" component={MapScreen} />
-        <Tab.Screen name="Country" component={CountryScreen} />
+        <Tab.Screen 
+          name="Map" 
+          component={MapScreen} 
+          options={{
+            tabBarIcon:(props)=> <Icon name="md-map" size={30} color={props.color} />
+          }}
+          />
+        <Tab.Screen 
+          name="Country" 
+          component={CountryScreen} 
+          options={{
+            tabBarIcon:(props) => <Icon name="md-globe" size={30} color={props.color} />
+          }}
+          />
       </Tab.Navigator>
     </NavigationContainer>
   );
